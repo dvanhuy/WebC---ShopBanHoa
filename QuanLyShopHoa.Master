@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="QuanLyShopHoa.master.cs" Inherits="QuanLyShopHoa.QuanLyShopHoa" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="./CSS/stylemasterpage.css">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="table-container">
+            <tr>
+                <td class="auto-style2" colspan="3">
+                    <img alt="" class="img-banner" src="image/banner.jpg" /></td>
+            </tr>
+            <tr>
+                <td class="menu-list" style="vertical-align: top">
+                    <div class="menu-list-title">Danh mục hoa</div>
+                    <asp:Repeater ID="Repeater1" runat="server">
+                        <ItemTemplate>
+                            <a href="DanhSachHoa.aspx?MaDM=<%# Eval("MaDM") %>">
+                                <div class="menu-list-item"><%# Eval("TenDM") %></div>
+                            </a>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </td>
+                <td class="main-content" style="vertical-align: top">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td class="login" style="vertical-align: top">
+                    <div>
+                        <div>Thông tin đăng nhập</div>
+                        <div class="input-type">
+                            <label for="user">Tên đăng nhập</label>
+                            <input type="text" name="" id="user">
+                        </div>
+                        <div class="input-type">
+                            <label for="pass">Mật khẩu</label>
+                            <input type="text" name="" id="pass">
+                        </div>
+                        <div>
+                            <input type="checkbox" name="" id="checkpass">
+                            <label for="checkpass">Ghi nhớ mật khẩu</label>
+                        </div>
+                        <div>
+                            <button>Đăng nhập</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr class="footer">
+                <td colspan="3">Liên hệ 01234567 để được tư vấn</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
